@@ -1,12 +1,8 @@
 language: node_js
-cache:
-  directories:
-    - node_modules
 node_js:
+- v4
+- v5
 - v6
-- v7
-- v8
-- v9
 addons:
   apt:
     sources:
@@ -14,6 +10,8 @@ addons:
     packages:
     - gcc-4.8
     - g++-4.8
+script:
+  - npm test -- -i --coverage
 env:
   global:
   - CXX=g++-4.8
